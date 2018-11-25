@@ -3,6 +3,7 @@ import 'package:flutter_demo/animation/animatedList.dart';
 import 'package:flutter_demo/animation/animationBuilder.dart';
 import 'package:flutter_demo/animation/backdrop.dart';
 import 'package:flutter_demo/animation/backdrop_demo.dart';
+import 'package:flutter_demo/animation/color_loader.dart';
 import 'package:flutter_demo/animation/curve_animation.dart';
 import 'package:flutter_demo/animation/easing.dart';
 import 'package:flutter_demo/animation/grid_animation.dart';
@@ -15,8 +16,18 @@ import 'package:flutter_demo/animation/staggered.dart';
 import 'package:flutter_demo/animation/transformationanimationwidget.dart';
 import 'package:flutter_demo/animation/using_animation_controller.dart';
 import 'package:flutter_demo/animation/valuechangeanimation.dart';
+import 'package:flutter_demo/loader/color_loader_2.dart';
+import 'package:flutter_demo/loader/loader3.dart';
+import 'package:flutter_demo/login/login_screen_1.dart';
 
 void main() => runApp(MyApp());
+List<Color> colors = [
+  Colors.green,
+  Colors.red,
+  Colors.black,
+  Colors.blue,
+  Colors.orange
+];
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -76,6 +87,31 @@ class MyApp extends StatelessWidget {
         },
         '/animation_back_drop_demo': (BuildContext context) {
           return BackdropDemo();
+        },
+        '/animation_color': (BuildContext context) {
+          return ColorLoader(
+            colors: colors,
+            duration: Duration(seconds: 1),
+          );
+        },
+        '/loader2': (BuildContext context) {
+          return ColorLoader2();
+        },
+        '/loader3': (BuildContext context) {
+          return ColorLoader3(
+            radius: 20.0,
+            dotRadius: 5.0,
+          );
+        },
+        '/animation_login': (BuildContext context) {
+          return Scaffold(
+            body: Container(
+              child: LoginScreen1(
+                  primaryColor: Color(0xFF4aa0d5),
+                  backgroundColor: Colors.white,
+                  backgroundImage: new AssetImage('images/pic27.jpg')),
+            ),
+          );
         },
       },
     );
@@ -190,6 +226,26 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('back_drop_demo'),
               onPressed: () {
                 Navigator.of(context).pushNamed('/animation_back_drop_demo');
+              }),
+          new OutlineButton(
+              child: Text('animation_color'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/animation_color');
+              }),
+          new OutlineButton(
+              child: Text('animation_login'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/animation_login');
+              }),
+          new OutlineButton(
+              child: Text('loader2'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/loader2');
+              }),
+          new OutlineButton(
+              child: Text('loader3'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/loader3');
               }),
         ],
       ),
