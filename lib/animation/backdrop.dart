@@ -4,7 +4,6 @@ import 'package:flutter_demo/animation/grid_animation.dart';
 class BackDropPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return BackDropPageState();
   }
 }
@@ -15,7 +14,6 @@ class BackDropPageState extends State<BackDropPage>
   AnimationController controller;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     controller = new AnimationController(
         vsync: this,
@@ -39,7 +37,6 @@ class BackDropPageState extends State<BackDropPage>
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         title: Text("BackDrop"),

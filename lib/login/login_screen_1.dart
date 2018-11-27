@@ -285,7 +285,7 @@ class MyClipper extends CustomClipper<Path> {
     p.lineTo(size.width, size.height * 0.785);
     p.arcToPoint(
       Offset(0.0, size.height * 0.75),
-      radius: const Radius.elliptical(60.0, 10.0),
+      radius: const Radius.elliptical(70.0, 10.0),
       rotation: 0.0,
     );
     p.lineTo(0.0, 0.0);

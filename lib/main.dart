@@ -17,8 +17,12 @@ import 'package:flutter_demo/animation/transformationanimationwidget.dart';
 import 'package:flutter_demo/animation/using_animation_controller.dart';
 import 'package:flutter_demo/animation/valuechangeanimation.dart';
 import 'package:flutter_demo/loader/color_loader_2.dart';
+import 'package:flutter_demo/loader/flip_loader.dart';
 import 'package:flutter_demo/loader/loader3.dart';
+import 'package:flutter_demo/loader/loader4.dart';
 import 'package:flutter_demo/login/login_screen_1.dart';
+import 'package:flutter_demo/login/login_screen_2.dart';
+import 'package:flutter_demo/login/login_screen_3.dart';
 
 void main() => runApp(MyApp());
 List<Color> colors = [
@@ -103,6 +107,9 @@ class MyApp extends StatelessWidget {
             dotRadius: 5.0,
           );
         },
+        '/loader4': (BuildContext context) {
+          return ColorLoader4();
+        },
         '/animation_login': (BuildContext context) {
           return Scaffold(
             body: Container(
@@ -111,6 +118,21 @@ class MyApp extends StatelessWidget {
                   backgroundColor: Colors.white,
                   backgroundImage: new AssetImage('images/pic27.jpg')),
             ),
+          );
+        },
+        '/Filploader': (BuildContext context) {
+          return FilpLoader();
+        },
+        '/login3': (BuildContext context) {
+          return LoginScreen3();
+        },
+        '/login2': (BuildContext context) {
+          return LoginScreen2(
+            backgroundColor1: Colors.white,
+            backgroundColor2: Colors.white,
+            highlightColor: Colors.white,
+            foregroundColor: Colors.black,
+            logo: AssetImage('images/dsnyc.png'),
           );
         },
       },
@@ -246,6 +268,26 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('loader3'),
               onPressed: () {
                 Navigator.of(context).pushNamed('/loader3');
+              }),
+          new OutlineButton(
+              child: Text('loader4'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/loader4');
+              }),
+          new OutlineButton(
+              child: Text('Filploader'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/Filploader');
+              }),
+          new OutlineButton(
+              child: Text('login2'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/login2');
+              }),
+          new OutlineButton(
+              child: Text('login3'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/login3');
               }),
         ],
       ),
