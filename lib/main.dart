@@ -16,6 +16,7 @@ import 'package:flutter_demo/animation/staggered.dart';
 import 'package:flutter_demo/animation/transformationanimationwidget.dart';
 import 'package:flutter_demo/animation/using_animation_controller.dart';
 import 'package:flutter_demo/animation/valuechangeanimation.dart';
+import 'package:flutter_demo/button/button_home.dart';
 import 'package:flutter_demo/loader/color_loader_2.dart';
 import 'package:flutter_demo/loader/flip_loader.dart';
 import 'package:flutter_demo/loader/loader3.dart';
@@ -125,6 +126,9 @@ class MyApp extends StatelessWidget {
         },
         '/login3': (BuildContext context) {
           return LoginScreen3();
+        },
+        '/buitton': (BuildContext context) {
+          return ButtonHome();
         },
         '/login2': (BuildContext context) {
           return LoginScreen2(
@@ -288,6 +292,11 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('login3'),
               onPressed: () {
                 Navigator.of(context).pushNamed('/login3');
+              }),
+          new OutlineButton(
+              child: Text('buitton'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/buitton');
               }),
         ],
       ),
