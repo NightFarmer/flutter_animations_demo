@@ -18,6 +18,7 @@ import 'package:flutter_demo/animation/using_animation_controller.dart';
 import 'package:flutter_demo/animation/valuechangeanimation.dart';
 import 'package:flutter_demo/button/button_home.dart';
 import 'package:flutter_demo/canvas/canvas_1.dart';
+import 'package:flutter_demo/canvas/canvas_2.dart';
 import 'package:flutter_demo/loader/color_loader_2.dart';
 import 'package:flutter_demo/loader/flip_loader.dart';
 import 'package:flutter_demo/loader/loader3.dart';
@@ -146,6 +147,9 @@ class MyApp extends StatelessWidget {
             foregroundColor: Colors.black,
             logo: AssetImage('images/dsnyc.png'),
           );
+        },
+        '/canvas2': (BuildContext context) {
+          return Canvas2();
         },
       },
     );
@@ -311,6 +315,11 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.of(context).pushNamed('/canvas1');
               }),
+            new OutlineButton(
+              child: Text('canvas2'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/canvas2');
+              }),  
         ],
       ),
     );
