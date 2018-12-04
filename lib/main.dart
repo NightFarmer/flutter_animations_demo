@@ -19,6 +19,7 @@ import 'package:flutter_demo/animation/valuechangeanimation.dart';
 import 'package:flutter_demo/button/button_home.dart';
 import 'package:flutter_demo/canvas/canvas_1.dart';
 import 'package:flutter_demo/canvas/canvas_2.dart';
+import 'package:flutter_demo/canvas/canvas_3.dart';
 import 'package:flutter_demo/loader/color_loader_2.dart';
 import 'package:flutter_demo/loader/flip_loader.dart';
 import 'package:flutter_demo/loader/loader3.dart';
@@ -26,6 +27,8 @@ import 'package:flutter_demo/loader/loader4.dart';
 import 'package:flutter_demo/login/login_screen_1.dart';
 import 'package:flutter_demo/login/login_screen_2.dart';
 import 'package:flutter_demo/login/login_screen_3.dart';
+import 'package:flutter_demo/map/leaflet.dart';
+import 'package:flutter_demo/ui/challenge_filter_menu.dart';
 
 void main() => runApp(MyApp());
 List<Color> colors = [
@@ -132,6 +135,9 @@ class MyApp extends StatelessWidget {
         '/buitton': (BuildContext context) {
           return ButtonHome();
         },
+        '/leaflet': (BuildContext context) {
+          return Leaflet();
+        },
         '/canvas1': (BuildContext context) {
           return CircularProgress(
             size: 50.0,
@@ -150,6 +156,12 @@ class MyApp extends StatelessWidget {
         },
         '/canvas2': (BuildContext context) {
           return Canvas2();
+        },
+        '/canvas3': (BuildContext context) {
+          return Canvas3();
+        },
+        '/menu_test_view': (BuildContext context) {
+          return MenuTestView();
         },
       },
     );
@@ -315,11 +327,26 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.of(context).pushNamed('/canvas1');
               }),
-            new OutlineButton(
+          new OutlineButton(
               child: Text('canvas2'),
               onPressed: () {
                 Navigator.of(context).pushNamed('/canvas2');
-              }),  
+              }),
+          new OutlineButton(
+              child: Text('leaflet'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/leaflet');
+              }),
+          new OutlineButton(
+              child: Text('canvas3'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/canvas3');
+              }),
+          new OutlineButton(
+              child: Text('MenuTestView'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/menu_test_view');
+              }),
         ],
       ),
     );
