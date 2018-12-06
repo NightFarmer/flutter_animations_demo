@@ -20,6 +20,7 @@ import 'package:flutter_demo/button/button_home.dart';
 import 'package:flutter_demo/canvas/canvas_1.dart';
 import 'package:flutter_demo/canvas/canvas_2.dart';
 import 'package:flutter_demo/canvas/canvas_3.dart';
+import 'package:flutter_demo/flutter_ui_challenge_flight_search/flight_serch_home.dart';
 import 'package:flutter_demo/loader/color_loader_2.dart';
 import 'package:flutter_demo/loader/flip_loader.dart';
 import 'package:flutter_demo/loader/loader3.dart';
@@ -45,8 +46,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: true,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
@@ -162,6 +164,9 @@ class MyApp extends StatelessWidget {
         },
         '/menu_test_view': (BuildContext context) {
           return MenuTestView();
+        },
+        '/flight_search_home': (BuildContext context) {
+          return FlightSearchHome();
         },
       },
     );
@@ -346,6 +351,11 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('MenuTestView'),
               onPressed: () {
                 Navigator.of(context).pushNamed('/menu_test_view');
+              }),
+          new OutlineButton(
+              child: Text('flight_search_home'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/flight_search_home');
               }),
         ],
       ),
